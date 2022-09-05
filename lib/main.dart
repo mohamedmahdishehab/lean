@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,15 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -45,6 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       if (_counter == 10) {
         _counter = 10;
+        showDialog(
+            context: context,
+            builder: (_MyHomePageState) => AlertDialog(
+                  actions: [Text('this is maximum number')],
+                ));
       } else {
         _counter++;
       }
@@ -55,6 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       if (_counter == 0) {
         _counter = 0;
+        showDialog(
+            context: context,
+            builder: (_MyHomePageState) => AlertDialog(
+                  actions: [Text('this is minimum number')],
+                ));
       } else {
         _counter--;
       }
@@ -70,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             const Text(
               'You have pushed the button this many times:',
               style: TextStyle(color: Colors.black),
