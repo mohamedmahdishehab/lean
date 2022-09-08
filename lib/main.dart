@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:laerningrami/myclasses/mystyle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
         showDialog(
             context: context,
             builder: (_MyHomePageState) => AlertDialog(
-                  actions: [Text('this is maximum number')],
+                  actions: [
+                    Text(
+                      'this is maximum number',
+                      style: MyStyle.popupStyle,
+                    )
+                  ],
                 ));
       } else {
         _counter++;
@@ -56,7 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
         showDialog(
             context: context,
             builder: (_MyHomePageState) => AlertDialog(
-                  actions: [Text('this is minimum number')],
+                  actions: [
+                    Text(
+                      'this is minimum number',
+                      style: MyStyle.popupStyle,
+                    )
+                  ],
                 ));
       } else {
         _counter--;
